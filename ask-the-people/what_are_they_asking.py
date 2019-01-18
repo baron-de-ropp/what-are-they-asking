@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 from flask import Flask, render_template, request, url_for
-from services.SuggestedQueries import SuggestedQueries
+from services.TopicsProvider import TopicsProvider
+import json
 
 app = Flask(__name__)
+app.debug = True
+
 
 @app.route("/")
 def index():
@@ -13,8 +16,8 @@ def index():
 @app.route("/questions/", methods=["POST", "GET"])
 def questions():
     if request.method == "POST":
-        query = SuggestedQueries.get_suggested_queries(request.form["keywords"])
-        return str(query)
+        model = TopicsProvider.get_topics(request.form["keywords"])
+        return render_template("questions.html", model=model)
     else:
         return "put in some keywords and you'll get questions"
 

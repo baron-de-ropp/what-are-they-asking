@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What Are They Asking?!</title>
+    </head>
+    <body>
+        <h1>Here are the questions being asked about your topic:</h1>
+        <h2>Who?</h2>
+        <ul>
+        {% for question in model.who_topics %}
+        
+            <li>{{question}}</li>
+        {% endfor %}
+        </ul>
+    </body>
+    <script>
+    </script>
+</html>
