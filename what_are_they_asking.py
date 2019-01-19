@@ -5,7 +5,6 @@ import json
 import requests as r
 
 app = Flask(__name__)
-app.debug = True
 
 
 @app.route("/")
@@ -19,7 +18,7 @@ def questions():
     return redirect(url_for("questions_get", keywords=request.form["keywords"]))
 
 
-@app.route("/questions/<keywords>")
+@app.route("/qustions/<keywords>")
 def questions_get(keywords):
     model = TopicsProvider.get_topics(keywords)
     return render_template("questions.html", model=model)
