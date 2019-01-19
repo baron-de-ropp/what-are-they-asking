@@ -19,7 +19,7 @@ def questions():
     return redirect(url_for("questions_get", keywords=request.form["keywords"]))
 
 
-@app.route("/qustions/<keywords>")
+@app.route("/questions/<keywords>")
 def questions_get(keywords):
     model = TopicsProvider.get_topics(keywords)
     return render_template("questions.html", model=model)

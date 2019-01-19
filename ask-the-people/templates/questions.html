@@ -4,7 +4,7 @@
         <title>What Are They Asking?!</title>
     </head>
     <body>
-        <h1>Here are the questions being asked about your topic:</h1>
+        <h1>Here are the recent questions asked about your topic:</h1>
         <h2>Keyword Based Topics:</h2>
         <ul>
             {% for question in model.keyword_topics %}
@@ -143,9 +143,7 @@
         <form action="{{ url_for("questions") }}" method="post">
                 Keywords:<input type="text" name="keywords" value="">
                 <br>
-                <input type="submit" value="Get Questions!">
+                <input id="submit-button" type="submit" value="Get Questions!">
             </form>
     </body>
-    <script>
-    </script>
 </html>
