@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What Are They Asking?!</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/global.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/local.css') }}" />
+    </head>
+    <body class="container">
+        <h1>What Are They Asking?!</h1>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

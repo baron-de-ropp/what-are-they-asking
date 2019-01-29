@@ -1,149 +1,143 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>What Are They Asking?!</title>
-    </head>
-    <body>
-        <h1>Here are the recent questions asked about your topic:</h1>
-        <h2>Keyword Based Topics:</h2>
-        <ul>
-            {% for question in model.keyword_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h2>Interogatives:</h2>
-        <h3>Who</h3>
-        <ul>
-            {% for question in model.who_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>What</h3>
-        <ul>
-            {% for question in model.what_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Where</h3>
-        <ul>
-            {% for question in model.where_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>When</h3>
-        <ul>
-            {% for question in model.when_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Why</h3>
-        <ul>
-            {% for question in model.why_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>How</h3>
-        <ul>
-            {% for question in model.how_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Which</h3>
-        <ul>
-            {% for question in model.which_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h2>Verbs:</h2>
-        <h3>Are</h3>
-        <ul>
-            {% for question in model.are_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Is</h3>
-        <ul>
-            {% for question in model.is_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Will</h3>
-        <ul>
-            {% for question in model.will_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Can</h3>
-        <ul>
-            {% for question in model.can_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h2>Prepositions:</h2>
-        <h3>Or</h3>
-        <ul>
-            {% for question in model.or_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>To</h3>
-        <ul>
-            {% for question in model.to_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>For</h3>
-        <ul>
-            {% for question in model.for_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>With</h3>
-        <ul>
-            {% for question in model.with_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Without</h3>
-        <ul>
-            {% for question in model.without_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Near</h3>
-        <ul>
-            {% for question in model.near_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h2>Comparisons:</h2>
-        <h3>Like</h3>
-        <ul>
-            {% for question in model.like_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>And</h3>
-        <ul>
-            {% for question in model.and_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <h3>Versus</h3>
-        <ul>
-            {% for question in model.versus_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-            {% for question in model.vs_topics %}
-                <li>{{question}}?</li>
-            {% endfor %}
-        </ul>
-        <p>So, who's the fuckin' man now, Ali!?</p>
-        <p>Don't like those questions? Try some other keywords, then.</p>
-        <form action="{{ url_for("questions") }}" method="post">
-                Keywords:<input type="text" name="keywords" value="">
-                <br>
-                <input id="submit-button" type="submit" value="Get Questions!">
-            </form>
-    </body>
-</html>
+{% extends "_layout.html" %}
+{% block content %}
+<h2>Recently Asked Questions:</h2>
+<h3>Keyword Based Topics:</h3>
+<ul>
+    {% for question in model.keyword_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h3>Interogatives:</h3>
+<h4>Who</h4>
+<ul>
+    {% for question in model.who_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>What</h4>
+<ul>
+    {% for question in model.what_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Where</h4>
+<ul>
+    {% for question in model.where_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>When</h4>
+<ul>
+    {% for question in model.when_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Why</h4>
+<ul>
+    {% for question in model.why_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>How</h4>
+<ul>
+    {% for question in model.how_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Which</h4>
+<ul>
+    {% for question in model.which_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h3>Verbs:</h3>
+<h4>Are</h4>
+<ul>
+    {% for question in model.are_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Is</h4>
+<ul>
+    {% for question in model.is_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Will</h4>
+<ul>
+    {% for question in model.will_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Can</h4>
+<ul>
+    {% for question in model.can_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h3>Prepositions:</h3>
+<h4>Or</h4>
+<ul>
+    {% for question in model.or_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>To</h4>
+<ul>
+    {% for question in model.to_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>For</h4>
+<ul>
+    {% for question in model.for_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>With</h4>
+<ul>
+    {% for question in model.with_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Without</h4>
+<ul>
+    {% for question in model.without_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Near</h4>
+<ul>
+    {% for question in model.near_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h3>Comparisons:</h3>
+<h4>Like</h4>
+<ul>
+    {% for question in model.like_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>And</h4>
+<ul>
+    {% for question in model.and_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<h4>Versus</h4>
+<ul>
+    {% for question in model.versus_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+    {% for question in model.vs_topics %}
+        <li>{{question}}?</li>
+    {% endfor %}
+</ul>
+<p>Don't like those questions? Try some other keywords, then.</p>
+<form action="{{ url_for("questions") }}" method="post">
+        Keywords:<input type="text" name="keywords" value="">
+    <br>
+    <input id="submit-button" type="submit" value="Get Questions!">
+</form>
+{% endblock %}
