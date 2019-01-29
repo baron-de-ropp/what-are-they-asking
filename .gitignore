@@ -1,1 +1,8 @@
-/home/daudzegir/Development/what-are-they-asking/__pycache__
+share
+services/__pycache__
+models/__pycache__
+lib64
+lib
+bin
+.vscode
+__pycache__
