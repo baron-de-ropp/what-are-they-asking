@@ -135,9 +135,5 @@
     {% endfor %}
 </ul>
 <p>Don't like those questions? Try some other keywords, then.</p>
-<form action="{{ url_for("questions") }}" method="post">
-        Keywords:<input type="text" name="keywords" value="">
-    <br>
-    <input id="submit-button" type="submit" value="Get Questions!">
-</form>
+{% include "_search_form.html" %}
 {% endblock %}

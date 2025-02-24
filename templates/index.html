@@ -1,10 +1,5 @@
 {% extends "_layout.html" %}
 {% block content %}
         <p>This is the website where you can enter a search term, and find out what kinds of questions people are asking about that topic!</p>
-        <form action="{{ url_for("questions") }}" method="post">
-            Keywords:<input type="text" name="keywords" value="">
-            <br>
-            <p id="loading"></p>
-            <input id="submit-button" type="submit" value="Get Questions!">
-        </form>
+        {% include "_search_form.html" %}
 {% endblock %}
