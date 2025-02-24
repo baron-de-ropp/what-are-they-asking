@@ -3,7 +3,7 @@ name: Deploy to DigitalOcean
 on:
   push:
     branches:
-      - main  # Change to 'master' if using master branch
+      - master  # Change to 'master' if using master branch
 
 jobs:
   deploy:
